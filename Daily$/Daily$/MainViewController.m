@@ -121,6 +121,11 @@
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     CalenderHeader *headerView = (CalenderHeader *)[_tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderIdentifier];
     DailyInfo *info = _dailyInfos[section];
