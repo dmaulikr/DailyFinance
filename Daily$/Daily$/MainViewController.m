@@ -93,7 +93,7 @@
     _dailyInfos = [displayInfos copy];
     
     [_tableView reloadData];
-    _totalLabel.text = [NSString stringWithFormat:@"$%.f", totalCost];
+    _totalLabel.text = [NSString stringWithFormat:@"$%.1f", totalCost];
     _totalLabel.textColor = totalCost >= 0 ? UIColorFromRGB(0x666B73) : UIColorFromRGB(0xdf735c);
 }
 
