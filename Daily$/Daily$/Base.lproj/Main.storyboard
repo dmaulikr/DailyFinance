@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,17 +20,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="qtZ-gJ-zgT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DashLine" translatesAutoresizingMaskIntoConstraints="NO" id="Xfs-8O-wGS">
-                                <rect key="frame" x="16" y="177" width="343" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="YBR-zA-Jek"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkN-ZF-ygS">
-                                <rect key="frame" x="16" y="65" width="343" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="qDW-D4-Wat"/>
                                 </constraints>
@@ -42,27 +37,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ZJ-jY-O3n">
-                                <rect key="frame" x="16" y="178" width="343" height="469"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalenderCell" rowHeight="50" id="67Y-BW-isU" customClass="CalenderCell">
                                         <rect key="frame" x="0.0" y="28" width="343" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="67Y-BW-isU" id="JxS-5K-UZJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                            <frame key="frameInset" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4U-Ss-euZ">
-                                                    <rect key="frame" x="268" y="13" width="49" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" red="0.34276577197244829" green="0.35868586713153267" blue="0.38406285293298426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DashLine" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-0X-FuZ">
-                                                    <rect key="frame" x="0.0" y="49" width="343" height="1"/>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DashLine" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-0X-FuZ"/>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="早睡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71n-gA-3FE">
-                                                    <rect key="frame" x="20" y="13" width="240" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="240" id="LWA-nA-OOI"/>
                                                     </constraints>
@@ -103,12 +93,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="s2i-DL-ofJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{count}" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rO0-UM-Flf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rO0-UM-Flf" firstAttribute="top" secondItem="QkN-ZF-ygS" secondAttribute="bottom" constant="14" id="2es-LV-Y0T"/>
                             <constraint firstItem="Xfs-8O-wGS" firstAttribute="width" secondItem="5ZJ-jY-O3n" secondAttribute="width" id="BgN-yl-3CL"/>
                             <constraint firstItem="QkN-ZF-ygS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="TZz-8O-brL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5ZJ-jY-O3n" secondAttribute="bottom" constant="20" id="UiS-dH-Bdm"/>
+                            <constraint firstItem="rO0-UM-Flf" firstAttribute="trailing" secondItem="QkN-ZF-ygS" secondAttribute="trailing" id="Va9-mO-ks5"/>
                             <constraint firstItem="QkN-ZF-ygS" firstAttribute="width" secondItem="5ZJ-jY-O3n" secondAttribute="width" id="WhP-3P-Qh8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="5ZJ-jY-O3n" secondAttribute="leading" id="ZRQ-dL-syT"/>
                             <constraint firstItem="5ZJ-jY-O3n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="158" id="c38-WB-DXe"/>
@@ -122,6 +119,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="$ 1300" id="aLm-Pn-TFZ"/>
                     <connections>
+                        <outlet property="_itemCountLabel" destination="rO0-UM-Flf" id="B2P-ed-veV"/>
                         <outlet property="_tableView" destination="5ZJ-jY-O3n" id="CBk-pq-a0L"/>
                         <outlet property="_totalLabel" destination="QkN-ZF-ygS" id="zib-Gi-h5b"/>
                     </connections>

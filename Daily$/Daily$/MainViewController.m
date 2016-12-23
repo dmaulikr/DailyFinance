@@ -18,6 +18,8 @@
 @interface MainViewController ()<UITableViewDelegate, UITableViewDataSource> {
     __weak IBOutlet UITableView *_tableView;
     __weak IBOutlet UILabel *_totalLabel;
+    __weak IBOutlet UILabel *_itemCountLabel;
+    
     NSArray *_dailyInfos;
     EKEventStore *_eventStore;
 }
@@ -56,11 +58,30 @@
     for (EKEvent *event in events) {
         if ([event.notes hasPrefix:@"$"]) {
             [moneyEvents addObject:event];
+//            if (![event.calendar.title isEqualToString:@"Daily$"]) {
+//                NSLog(@"%@ %@", event, event.notes);
+//            }
         }
     }
     [moneyEvents sortUsingComparator:^NSComparisonResult(EKEvent *event1, EKEvent *event2) {
-        return [event2.startDate compare:event1.startDate];
+        return [event1.startDate compare:event2.startDate];
     }];
+    
+    // GET DAILY EVENTS
+    /*
+    NSMutableArray *dailyEvents = [NSMutableArray array];
+    for (EKEvent *event in events) {
+        if ([event.calendar.title isEqualToString:@"Daily$"]) {
+            [dailyEvents addObject:event];
+        }
+    }
+    for (EKEvent *event in dailyEvents) {
+        NSString *cost = [event.notes substringFromIndex:1];
+        if ([cost doubleValue] == 0) {
+            NSLog(@"Invalid daily event: %@ \nnotes:%@", event, cost);
+        }
+    }
+    //*/
     
     // convert to daily infos
     double totalCost = 0;
@@ -75,15 +96,16 @@
             
             currentDateInfo = [DailyInfo new];
             currentDateInfo.dateString = [event.startDate formattedString];
-            [displayInfos addObject:currentDateInfo];
+            [displayInfos insertObject:currentDateInfo atIndex:0];
             currentDate = event.startDate;
         }
         CostInfo *cost = [CostInfo new];
         cost.title = event.title;
         cost.cost = [event.notes substringFromIndex:1];
-        [currentCostInfos addObject:cost];
+        [currentCostInfos insertObject:cost atIndex:0];
         
         totalCost += [cost.cost doubleValue];
+        cost.cost = [NSString stringWithFormat:@"%@|%.0f", cost.cost, totalCost];
         
         if ([cost.cost doubleValue] == 0) {
             NSLog(@"Error: invalid cost: %@", event.notes);
@@ -91,10 +113,12 @@
     }
     currentDateInfo.costInfos = currentCostInfos;
     _dailyInfos = [displayInfos copy];
+
     
     [_tableView reloadData];
     _totalLabel.text = [NSString stringWithFormat:@"$%.1f", totalCost];
     _totalLabel.textColor = totalCost >= 0 ? UIColorFromRGB(0x666B73) : UIColorFromRGB(0xdf735c);
+    _itemCountLabel.text = [NSString stringWithFormat:@"%d", (int)moneyEvents.count];
 }
 
 
